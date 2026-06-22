@@ -1,0 +1,28 @@
+application:
+  name: snipe-it
+  pods:
+  - name: app
+    image: snipe/snipe-it:latest
+    path: /
+    servicePorts:
+    - 80
+    vars:
+      APP_URL: "https://relaxed-weasel-snipe-it.cloud.nexlayer.ai"
+      MYSQL_PORT_3306_TCP_ADDR: "mysql.pod"
+      MYSQL_DATABASE: snipeit
+      MYSQL_USER: snipeit
+      MYSQL_PASSWORD: snipeit
+      APP_KEY: "base64:SNIPEITkeyHere123456789XXXXXXXx="
+  - name: mysql
+    image: mysql:8.0
+    servicePorts:
+    - 3306
+    vars:
+      MYSQL_DATABASE: snipeit
+      MYSQL_USER: snipeit
+      MYSQL_PASSWORD: snipeit
+      MYSQL_ROOT_PASSWORD: rootpassword
+    volumes:
+    - name: snipeit-db
+      mountPath: /var/lib/mysql
+      size: 10Gi
