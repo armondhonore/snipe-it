@@ -2,7 +2,7 @@ application:
   name: snipe-it
   pods:
   - name: app
-    image: snipe/snipe-it:latest
+    image: mirror.gcr.io/snipe/snipe-it:latest
     path: /
     servicePorts:
     - 80
@@ -14,7 +14,7 @@ application:
       MYSQL_PASSWORD: snipeit
       APP_KEY: "base64:SNIPEITkeyHere123456789XXXXXXXx="
   - name: mysql
-    image: mysql:8.0
+    image: mirror.gcr.io/library/mysql:8.0
     servicePorts:
     - 3306
     vars:
