@@ -8,11 +8,11 @@ application:
     - 80
     vars:
       APP_URL: "https://relaxed-weasel-snipe-it.cloud.nexlayer.ai"
+      APP_KEY: "base64:eFtrR8Do/N0xl0OrZoOce0WtFKRkf6W/8IK6zLbMKIc="
       MYSQL_PORT_3306_TCP_ADDR: "mysql.pod"
       MYSQL_DATABASE: snipeit
       MYSQL_USER: snipeit
-      MYSQL_PASSWORD: snipeit
-      APP_KEY: "base64:SNIPEITkeyHere123456789XXXXXXXx="
+      MYSQL_PASSWORD: "AI5mFR2GrgIa1nGDPKVAGnl56sFgzMFO"
   - name: mysql
     image: mirror.gcr.io/library/mysql:8.0
     servicePorts:
@@ -20,8 +20,8 @@ application:
     vars:
       MYSQL_DATABASE: snipeit
       MYSQL_USER: snipeit
-      MYSQL_PASSWORD: snipeit
-      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_PASSWORD: "AI5mFR2GrgIa1nGDPKVAGnl56sFgzMFO"
+      MYSQL_ROOT_PASSWORD: "FastKuAxmQSPBZSVEkm3IhNu8XlIi-iU"
     volumes:
     - name: snipeit-db
       mountPath: /var/lib/mysql
